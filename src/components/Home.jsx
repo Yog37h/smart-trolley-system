@@ -60,21 +60,21 @@ const Home = () => {
 
   return (
     <div
-      className="relative flex flex-col items-center justify-center min-h-screen bg-blue-900 text-white px-4 sm:px-6 lg:px-8"
+      className="relative flex flex-col items-center justify-center min-h-screen bg-blue-900 text-white px-4 sm:px-6 lg:px-8 py-4 sm:py-6"
       style={{ fontFamily: "Arial, sans-serif" }}
     >
-      {/* L-shaped lines for top-left corner */}
+      {/* L-shaped lines for top-left corner - Hidden on mobile */}
       <div
-        className="absolute top-4 left-4 sm:top-8 sm:left-8 lg:top-16 lg:left-16 w-20 h-20 sm:w-40 sm:h-40 lg:w-80 lg:h-80"
+        className="hidden sm:block absolute top-2 left-2 sm:top-4 sm:left-4 lg:top-8 lg:left-8 w-16 h-16 sm:w-32 sm:h-32 lg:w-64 lg:h-64"
         style={{
           borderTop: "4px solid white",
           borderLeft: "4px solid white",
         }}
       ></div>
 
-      {/* L-shaped lines for bottom-right corner */}
+      {/* L-shaped lines for bottom-right corner - Hidden on mobile */}
       <div
-        className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 lg:bottom-16 lg:right-16 w-20 h-20 sm:w-40 sm:h-40 lg:w-80 lg:h-80"
+        className="hidden sm:block absolute bottom-2 right-2 sm:bottom-4 sm:right-4 lg:bottom-8 lg:right-8 w-16 h-16 sm:w-32 sm:h-32 lg:w-64 lg:h-64"
         style={{
           borderBottom: "4px solid white",
           borderRight: "4px solid white",
@@ -84,19 +84,19 @@ const Home = () => {
       {/* Content Container */}
       <div className="flex flex-col items-center w-full max-w-3xl">
         {/* Welcome Text */}
-        <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2 sm:mb-4 text-center">
+        <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-1 sm:mb-2 text-center">
           WELCOME TO
         </h3>
-        <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 md:mb-10 lg:mb-[60px] text-center">
+        <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-4 md:mb-6 lg:mb-8 text-center">
           SMART TROLLEY SYSTEM
         </h2>
-        <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-center">
+        <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold mb-2 sm:mb-4 md:mb-6 lg:mb-8 text-center">
           RAJSUJEE INTERNATIONALS
         </h1>
 
         {/* Order Number Input */}
-        <div className="flex flex-col sm:flex-row items-center mb-6 sm:mb-8 w-full sm:w-auto">
-          <label className="text-base sm:text-lg md:text-xl font-medium mb-2 sm:mb-0 sm:mr-4">
+        <div className="flex flex-col sm:flex-row items-center mb-2 sm:mb-4 w-full sm:w-auto">
+          <label className="text-sm sm:text-base md:text-lg font-medium mb-1 sm:mb-0 sm:mr-4">
             ORDER NO:
           </label>
           <input
@@ -104,14 +104,14 @@ const Home = () => {
             value={orderNo}
             onChange={(e) => setOrderNo(e.target.value)}
             placeholder="Enter the order no"
-            className="w-full sm:w-48 md:w-64 h-10 px-3 text-black rounded-md focus:outline-none bg-gray-300 placeholder-gray-600"
+            className="w-full sm:w-48 md:w-64 h-8 sm:h-10 px-3 text-black rounded-md focus:outline-none bg-gray-300 placeholder-gray-600"
             style={{ border: "none" }}
           />
         </div>
 
         {/* Error Message */}
         {error && (
-          <p className="text-red-400 mb-4 text-sm sm:text-base md:text-lg text-center">
+          <p className="text-red-400 mb-2 sm:mb-4 text-xs sm:text-sm md:text-base text-center">
             {error}
           </p>
         )}
@@ -120,7 +120,7 @@ const Home = () => {
         <button
           onClick={handleProceed}
           disabled={loading}
-          className="bg-white text-blue-900 font-semibold py-2 px-4 sm:px-6 rounded-full hover:bg-gray-200 transition duration-300 disabled:opacity-50"
+          className="bg-white text-blue-900 font-semibold py-1 sm:py-2 px-4 sm:px-6 rounded-full hover:bg-gray-200 transition duration-300 disabled:opacity-50"
           style={{ textTransform: "uppercase" }}
         >
           {loading ? "LOADING..." : "PROCEED"}
